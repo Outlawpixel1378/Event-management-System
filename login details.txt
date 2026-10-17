@@ -1,0 +1,7 @@
+User credentials: 
+email: 'user@example.com'
+password: 'user123'
+
+Admin credentials: 
+email: 'admin@example.com
+password: 'admin123'

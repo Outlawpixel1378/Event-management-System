@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>Event Manager</h1>
+            <div class="nav-links">
+                <a href="#" class="active" data-page="home">Home</a>
+                <a href="#" data-page="events">Events</a>
+                <a href="#" data-page="admin">Admin Panel</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <h2>Welcome to Event Management System</h2>
+            <p>Plan, manage, and RSVP to events easily!</p>
+        </section>
+
+        <!-- Events Page -->
+        <section id="events" class="page">
+            <h2>Available Events</h2>
+            <div class="events-grid" id="eventsContainer">
+                <!-- Events will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Admin Panel -->
+        <section id="admin" class="page">
+            <h2>Admin Panel</h2>
+            <div class="admin-controls">
+                <button id="addEventBtn" class="btn-primary">Add New Event</button>
+                <div class="admin-events" id="adminEventsContainer">
+                    <!-- Admin event list will be added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add/Edit Event Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add New Event</h2>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventTitle">Event Title</label>
+                    <input type="text" id="eventTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">Date</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventLocation">Location</label>
+                    <input type="text" id="eventLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventDescription">Description</label>
+                    <textarea id="eventDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="eventPrice">Price ($)</label>
+                    <input type="number" id="eventPrice" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventCapacity">Capacity</label>
+                    <input type="number" id="eventCapacity" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventImage">Image URL</label>
+                    <input type="url" id="eventImage" required>
+                </div>
+                <button type="submit" class="btn-primary">Save Event</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register for Event</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="regName">Name</label>
+                    <input type="text" id="regName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">Phone</label>
+                    <input type="tel" id="regPhone" required>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

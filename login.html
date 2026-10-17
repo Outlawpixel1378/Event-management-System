@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Event Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .login-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+        }
+        .login-tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            color: #666;
+        }
+        .login-tab.active {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+        }
+        .login-form {
+            display: none;
+        }
+        .login-form.active {
+            display: block;
+        }
+        .error-message {
+            color: #e74c3c;
+            margin-top: 1rem;
+            display: none;
+        }
+        .success-message {
+            color: #2ecc71;
+            margin-top: 1rem;
+            display: none;
+        }
+        .form-footer {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .form-footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="text-center">Event Management System</h2>
+        <div class="login-tabs">
+            <div class="login-tab active" data-tab="user">User Login</div>
+            <div class="login-tab" data-tab="admin">Admin Login</div>
+        </div>
+        
+        <!-- User Login Form -->
+        <form id="userLoginForm" class="login-form active">
+            <div class="form-group">
+                <label for="userEmail">Email</label>
+                <input type="email" id="userEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="userPassword">Password</label>
+                <input type="password" id="userPassword" required>
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+            <div class="error-message" id="userError"></div>
+            <div class="form-footer">
+                <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+            </div>
+        </form>
+
+        <!-- User Registration Form -->
+        <form id="userRegisterForm" class="login-form">
+            <div class="form-group">
+                <label for="regName">Full Name</label>
+                <input type="text" id="regName" required>
+            </div>
+            <div class="form-group">
+                <label for="regEmail">Email</label>
+                <input type="email" id="regEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="regConfirmPassword">Confirm Password</label>
+                <input type="password" id="regConfirmPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="regPhone">Phone Number</label>
+                <input type="tel" id="regPhone" required>
+            </div>
+            <button type="submit" class="btn-primary">Register</button>
+            <div class="error-message" id="registerError"></div>
+            <div class="success-message" id="registerSuccess"></div>
+            <div class="form-footer">
+                <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
+            </div>
+        </form>
+
+        <!-- Admin Login Form -->
+        <form id="adminLoginForm" class="login-form">
+            <div class="form-group">
+                <label for="adminEmail">Admin Email</label>
+                <input type="email" id="adminEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="adminPassword">Admin Password</label>
+                <input type="password" id="adminPassword" required>
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+            <div class="error-message" id="adminError"></div>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html> 
